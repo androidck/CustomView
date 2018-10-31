@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/qmui_config_color_white">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_topbar_title_color="@android:color/black"
+        app:qmui_topbar_left_back_drawable_id="@mipmap/icon_return_black"
+        app:qmui_topbar_text_btn_color_state_list="@android:color/black"
+        />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <com.scwang.smartrefresh.layout.SmartRefreshLayout
+           android:id="@+id/refreshLayout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <android.support.v7.widget.RecyclerView
+               android:id="@+id/recyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+       </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

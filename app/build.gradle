@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.alllure.customview"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs/']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //Qmui
+    implementation 'com.qmuiteam:qmui:1.1.7'
+    implementation 'com.qmuiteam:arch:0.1.1'
+    //绑定控件
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    //屏幕适配布局
+    implementation 'com.zhy:autolayout:1.4.5'
+    //上拉刷新，下拉加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    //水波纹效果
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
+    //腾讯x5 内核
+    //implementation files('libs/x5.jar')
+    //三级联动控件
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
+    //卡片布局
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okio:okio:2.1.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation files('libs/mysql-connector-java-5.1.18.jar')
+}

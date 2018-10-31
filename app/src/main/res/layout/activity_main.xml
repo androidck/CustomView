@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qmui_config_color_white"
+    >
+
+    <com.qmuiteam.qmui.widget.QMUIViewPager
+        android:id="@+id/viewPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line"
+        ></com.qmuiteam.qmui.widget.QMUIViewPager>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dedede"
+        android:layout_above="@+id/bottom_menu"
+        />
+    <!-- 底部菜单 -->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="105px"
+        android:layout_alignParentBottom="true"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10px"
+            android:layout_marginBottom="10px"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio_community"
+                style="@style/MainButtonStyle"
+                android:drawableTop="@drawable/home_button_selector"
+                android:paddingLeft="0dp"
+                android:text="首页"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/radio_messages"
+                style="@style/MainButtonStyle"
+                android:drawableTop="@drawable/kefu_button_selector"
+                android:text="客服"
+                />
+
+            <RadioButton
+                android:id="@+id/radio_collections"
+                style="@style/MainButtonStyle"
+                android:drawableTop="@drawable/message_button_selector"
+                android:text="消息"
+                />
+            <RadioButton
+                android:id="@+id/radio_aboutme"
+                style="@style/MainButtonStyle"
+                android:drawableTop="@drawable/my_button_selector"
+                android:gravity="center"
+                android:paddingLeft="0dp"
+                android:text="我的"
+                />
+            <!-- </LinearLayout>-->
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>
